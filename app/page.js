@@ -1,113 +1,111 @@
-import Image from "next/image";
-
+"use client";
+import React from "react";
+import Link from "next/link";
+import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
+import BabyChangingStationIcon from "@mui/icons-material/BabyChangingStation";
+import WcIcon from "@mui/icons-material/Wc";
+import LocalDiningIcon from "@mui/icons-material/LocalDining";
+import Footer from "./ux/Footer";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      {/* about us */}
+      <section id="hero" className="flex items-center hero-sections">
+        <div className="w-full">
+          <div className="flex items-end justify-end mr-20 heroo">
+            <div className="xl:col-span-6 hr w-[600px] flex flex-col items-center justify-items-center ">
+              <h2 className="nurse-header-1 text-center">
+                Welcome to Nurse Caren's Platform.
+              </h2>
+              <h2 className="text-white text-center">
+                A certified virtual medical assistant,health educator and
+                nutrition enthusiast.
+              </h2>
+              <Link
+                href="#about"
+                className="bg-[#DA4848] pt-2 pb-2 pr-5 pl-5 rounded text-white mt-2"
+              >
+                Read more
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+      {/* about us */}
+      {/* experience */}
+      <section
+        id="about"
+        className="w-full flex items-center justify-center paddings pt-20 pb-20"
+      >
+        <div className="w-full flex items-start justify-between aboutss">
+          <div className="w-full flex items-center justify-between">
+            <div className="about-heading flex items-center justify-between flex-col w-[70%] aboutsswitdth">
+              <h3>About Me</h3>
+              <span>
+                With over 5 years of experience in clinical and administrative
+                nursing, Nurse Caren has worked in both government and private
+                hospitals.
+                <br />
+                <br />
+                On this platform, she aims to simplify and clarify complex
+                health topics, relating them to our everyday experiences in the
+                healthcare journey.
+                <br /> <br /> As a passionate advocate for nutrition, Nurse
+                Caren provides health products that boost immunity and promote a
+                healthy lifestyle. Feel free to explore our catalog of wellness
+                products for more information
+              </span>
+              <Link href="#" class="about-btn">
+                <span>About us</span>
+              </Link>
+            </div>
+          </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="about-heading flex items-center justify-between flex-col w-[70%] aboutsswitdth">
+            <h3>Her areas of interest include:</h3>
+            <div className="w-full aboutsswitdth">
+              <div className="flex items-center justify-between pb-20 flex-wrap aboutsswitdth">
+                <div
+                  class="flex flex-col items-center"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <MedicationLiquidIcon className="hero-icons" />
+                  <h4>Health education and training</h4>
+                </div>
+                <div
+                  class="flex flex-col items-center"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <BabyChangingStationIcon className="hero-icons" />
+                  <h4>Mother and child health</h4>
+                </div>
+              </div>
+              <div className="flex items-center justify-between flex-wrap aboutsswitdth">
+                <div
+                  class="flex flex-col items-center "
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <WcIcon className="hero-icons" />
+                  <h4>Sexual and reproductive health</h4>
+                </div>
+                <div
+                  class="flex flex-col items-center"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <LocalDiningIcon className="hero-icons" />
+                  <h4>Nutrition and Research</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* experience */}
+      <Footer />
+    </>
   );
 }
