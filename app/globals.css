@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #336310;
+  --background-color: #f2f9fb;
+  --header-backgound: #fff;
+}
+
 html::-webkit-scrollbar {
   display: none;
 }
@@ -219,7 +225,228 @@ body::-webkit-scrollbar {
   padding-top: 30px;
   color: #fff;
 }
+.blog-heading > h2 {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+.ul-list {
+  margin-bottom: 12px;
+}
 
+.ul-list > li {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.comments-count {
+  margin-bottom: 10px !important;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.comment {
+  /* margin-top: 30px; */
+  position: relative;
+}
+.comment-img {
+  margin-right: 14px;
+  width: 50px;
+}
+
+.gg {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.img-comment {
+  width: 100%;
+  height: 100%;
+}
+.dpf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.dpf > h5 {
+  padding-right: 10px;
+}
+.replysu {
+  display: flex;
+  justify-content: space-between;
+}
+.hkuy {
+  margin-right: 10px;
+}
+.hkuy:hover {
+  cursor: pointer;
+  color: #336310 !important;
+}
+.coent {
+  margin-left: 30px;
+}
+
+.reply-form {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.reply-form h4 {
+  font-weight: bold;
+  font-size: 22px;
+}
+.reply-form p {
+  font-size: 14px;
+}
+.reply-form input {
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 14px;
+}
+.reply-form input:focus {
+  box-shadow: none;
+  border-color: #e9797f;
+}
+.reply-form textarea {
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 14px;
+  width: 100%;
+}
+.reply-form textarea:focus {
+  box-shadow: none;
+  border-color: #e9797f;
+}
+.reply-form .form-group {
+  margin-bottom: 25px;
+}
+.reply-form .btn-primary {
+  border-radius: 4px;
+  padding: 10px 20px;
+  border: 0;
+  background-color: #556270;
+}
+.reply-form .btn-primary:hover {
+  background-color: #606f7e;
+}
+.form-group {
+  padding-bottom: 8px;
+}
+.reply-form .form-group {
+  margin-bottom: 25px;
+}
+.imgwithsdiv {
+  width: 100%;
+  /* height: 50vh !important; */
+}
+.imgwithsd {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog-pagination ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subMenuContainer,
+.viewAll {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subMenuContainer,
+.viewAll:hover {
+  cursor: pointer;
+}
+.subMenuContainer:active {
+  background-color: transparent;
+}
+
+.subMenuContainer h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a2b2c;
+}
+.subMenuContainer .viewAll p {
+  font-size: 12px;
+  color: var(--primary-color);
+  font-weight: 400;
+  margin-left: 10px;
+}
+.subMenuContainer .viewAll i {
+  background: var(--primary-color);
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.subMenuContainer .viewAll i .MuiSvgIcon-root {
+  font-size: 16px;
+  color: var(--background-color);
+}
+.pages-css {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.paett {
+  margin-left: 10px;
+}
+.do {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.breadcrumbs {
+  padding: 18px 0;
+  background: #f8f9fa;
+  min-height: 40px;
+  margin-top: 80px;
+}
+.gifs {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 0 0 0;
+  margin: 0 0 15px 0;
+  color: #556270;
+  /* position: relative; */
+}
+.sidebar-item {
+  margin-bottom: 30px;
+}
+.post-item {
+  margin-top: 15px;
+}
+.recentb:hover {
+  cursor: pointer !important;
+}
+.recentt-img {
+  width: 50px;
+  height: 50px;
+}
+.tmo {
+  color: #aab2bd;
+}
 @media screen and (max-width: 650px) {
   .aboutss {
     flex-direction: column;
@@ -257,4 +484,16 @@ body::-webkit-scrollbar {
   .heroo {
     width: 100%;
   }
+
+  /* blogs */
+  .blogs {
+    flex-direction: column;
+  }
+  .left-blog {
+    width: 100%;
+  }
+  .right-recent {
+    width: 100%;
+  }
+  /* blog */
 }
