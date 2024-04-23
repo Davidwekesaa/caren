@@ -45,11 +45,15 @@ function Footer() {
                 </li>
                 <li>
                   <ChevronRightIcon className="footer-link-icons" />
-                  <Link href="/blog">Blog</Link>
+                  <Link href="/Blog">Blog</Link>
                 </li>
                 <li>
                   <ChevronRightIcon className="footer-link-icons" />
                   <Link href="">Courses</Link>
+                </li>
+                <li>
+                  <ChevronRightIcon className="footer-link-icons" />
+                  <Link href="/Wellness-products">Wellnes Products</Link>
                 </li>
               </ul>
             </div>

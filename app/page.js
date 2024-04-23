@@ -15,7 +15,7 @@ export default function Home() {
           <div className="flex items-end justify-end mr-20 heroo">
             <div className="xl:col-span-6 hr w-[600px] flex flex-col items-center justify-items-center ">
               <h2 className="nurse-header-1 text-center">
-                Welcome to Nurse Caren's Platform.
+                Welcome to Nurse Caren&apos;s Platform.
               </h2>
               <h2 className="text-white text-center">
                 A certified virtual medical assistant,health educator and

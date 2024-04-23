@@ -10,13 +10,13 @@ import CartIcon from "../components/CartIcon";
 import { usePathname } from "next/navigation";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
-import isMobile from "../hooks/IsMobileHook";
+import useIsMobile from "../hooks/IsMobileHook";
 function Navbar() {
   const pathname = usePathname();
-  let { navbarMobile, toClose, setToClose } = isMobile();
+  let { navbarMobile, toClose, setToClose } = useIsMobile();
   return (
     <>
-      <div className=" w-full flex items-center justify-center paddings mt-0 z-nav-index relative shadow-lg shadow-indigo-300/50">
+      <div className=" w-full flex items-center justify-center paddings mt-0 z-nav-index relative shadow-lg shadow-indigo-300/60">
         <div className="w-full flex items-center justify-between">
           {/* logo */}
           <div className="float-left ">

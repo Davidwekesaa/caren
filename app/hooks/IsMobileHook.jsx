@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-
-const isMobile = () => {
+const useIsMobile = () => {
   const [navbarMobile, setNavbarMobile] = useState(false);
   const [toClose, setToClose] = useState(true);
   useEffect(() => {
@@ -22,4 +21,4 @@ const isMobile = () => {
   return { navbarMobile, toClose, setToClose };
 };
 
-export default isMobile;
+export default useIsMobile;
