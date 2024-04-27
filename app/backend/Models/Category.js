@@ -1,19 +1,26 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const CategorySchema = new mongoose.Schema({
-    name:{
+let Category;
+if (mongoose.models.Category) {
+  Category = mongoose.model("Category");
+} else {
+  const CategorySchema = new mongoose.Schema(
+    {
+      name: {
         type: String,
-        required: true
-    },
-    imgSrc:{
+        required: true,
+      },
+      imgSrc: {
         type: String,
-        required: true
+        required: true,
+      },
     },
-   
-   
-},
-{ 
-  timestamps: true,
-})
+    {
+      timestamps: true,
+    }
+  );
 
-module.exports = mongoose.model("Category",CategorySchema)
+  Category = mongoose.model("Category", CategorySchema);
+}
+
+export default Category;

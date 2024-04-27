@@ -1,4 +1,4 @@
-const formatDate = () => {
+export const formatDate = () => {
   const date = new Date(); // Replace this with your date object
   const options = {
     year: "numeric",
@@ -9,5 +9,3 @@ const formatDate = () => {
   const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
   return formattedDate;
 };
-
-exports.formatDate = formatDate;
