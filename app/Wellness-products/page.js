@@ -400,8 +400,8 @@ function WellnesProducts() {
   }
 
   return (
-    <div className=" w-full paddings mt-16">
-      <div className="lefttttt">
+    <div className=" lefttttt paddings mt-16">
+      <div className="">
         <div className="menuCard chang">
           <SubMenuContainer name={"Wellness Products"} />
         </div>

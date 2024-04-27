@@ -76,7 +76,7 @@ function RightContainer({
           </datalist>
         </form>
 
-        <form className="form-selectt f-last">
+        <form className="form-selectt">
           <label htmlFor="locations">Location:</label>
           <input
             name="location"

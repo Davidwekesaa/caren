@@ -595,6 +595,7 @@ body::-webkit-scrollbar {
   align-items: center;
   margin: 10px 0;
   transition: 0.5s;
+  box-shadow: 0px 3px 30px var(--primary-color);
 }
 .mbl {
   background: var(--header-backgound);
@@ -620,7 +621,7 @@ body::-webkit-scrollbar {
   top: 0;
   transform: translateY(-50%); */
   /* background: #d0f0c0; */
-  box-shadow: 0px 3px 20px var(--primary-color);
+  box-shadow: 0px 3px 50px var(--primary-color);
 }
 
 .itemCard .imgBox img {
@@ -693,7 +694,8 @@ body::-webkit-scrollbar {
 /* right container */
 .rightContainer {
   width: 350px;
-  height: calc(100% - 60px);
+  /* height: calc(100% - 60px); */
+  height: 90% !important;
   background: var(--background-color);
   position: fixed;
   right: 0;
@@ -705,9 +707,12 @@ body::-webkit-scrollbar {
   padding: 20px 10px;
   transform: translateX(200%);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 3px 30px var(--primary-color);
   overflow-y: scroll;
   scroll-behavior: smooth;
+  margin-right: 10px;
+  border-radius: 50px;
 }
 .rightContainer::-webkit-scrollbar {
   display: none;
@@ -725,18 +730,8 @@ body::-webkit-scrollbar {
 .rightContainer .debitCardContainer {
   /* padding: 5px; */
   width: 100%;
-  height: auto;
-}
-.rightContainer .debitCardContainer .debitCard {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  /* height: 100px; */
-  min-width: 300px;
-  min-height: 100px;
-  /* min-height: 100px; */
-  border-radius: 15px;
-  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .form-selectt {
@@ -751,22 +746,29 @@ body::-webkit-scrollbar {
 }
 .custome-select {
   height: 20px !important;
+  width: 60% !important;
+  border: 1px solid #336310;
 }
-.f-last {
+/* .f-last {
   margin-bottom: 5px;
-}
+} */
 .cartCheckOutContainer {
+  /* margin-top: -60px; */
   width: 100%;
   min-width: 320px;
+
+  height: 350px;
 }
 .cartContainer {
   width: 100%;
-  height: 210px;
-  max-height: 280px;
+  /* height: 210px;
+  max-height: 280px; */
+  height: 500px !important;
   margin-top: 0px;
   padding: 0px 2px;
   /* overflow-y: scroll; */
   overflow-x: hidden;
+  /* background-color: red; */
 }
 .cartContainer .cartItems .cartItem {
   display: flex;
@@ -932,7 +934,7 @@ form {
   border-radius: 100vw;
   left: 0;
   bottom: 0;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 .checkOut:disabled,
 .checkOut[disabled] {
@@ -1171,14 +1173,12 @@ main {
   /* padding: 10px 0; */
 }
 .lefttttt {
-  width: 80% !important ;
+  width: 82% !important ;
 }
 .menuCard {
   width: 100%;
 }
-.style-again {
-  margin-top: 0;
-}
+
 .subMenuContainer,
 .viewAll {
   display: flex;
@@ -1462,25 +1462,6 @@ main {
   font-size: 12px;
 }
 
-/* right container */
-.rightContainer {
-  width: 350px;
-  height: calc(100% - 60px);
-  background: var(--background-color);
-  position: fixed;
-  right: 0;
-  top: 60px;
-  z-index: 105;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 10px;
-  transform: translateX(200%);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
 .rightContainer::-webkit-scrollbar {
   display: none;
 }
@@ -1510,19 +1491,19 @@ main {
   border-radius: 15px;
   background: var(--primary-color);
 }
-.cartCheckOutContainer {
+/* .cartCheckOutContainer {
   width: 100%;
   min-width: 320px;
-}
-.cartContainer {
+} */
+/* .cartContainer {
   width: 100%;
   height: 210px;
   max-height: 280px;
   margin-top: 0px;
   padding: 0px 2px;
-  /* overflow-y: scroll; */
+
   overflow-x: hidden;
-}
+} */
 
 .cartContainer::-webkit-scrollbar {
   /* display: none; */
@@ -2721,6 +2702,13 @@ form {
   .dash-user-add-user {
     justify-content: flex-start;
   }
+  .lefttttt {
+    width: 100% !important;
+  }
+  /* .rightContainer {
+    justify-content: space-between;
+    width: 300px;
+  } */
 }
 @media screen and (min-width: 650px) {
   .rightContainer {
@@ -2785,9 +2773,6 @@ form {
   }
   .f-last {
     margin-bottom: 1px !important;
-  }
-  .lefttttt {
-    width: 100% !important;
   }
 }
 /* big screen */

@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
@@ -42,10 +43,11 @@ function CartItem({ name, imgSrc, price, itemId, itemQty }) {
     if (action === "add") {
       const getProductById = async () => {
         await axios
-          .get(`${process.env.REACT_APP_Server_Url}Product/${id}`)
+          .get(`/api/products/${id}`)
           .then((logins) => {
             if (
-              logins.data.qty - (returnCartItemQuantinty(cart, itemId) + 1) >
+              logins?.data?.Products?.qty -
+                (returnCartItemQuantinty(cart, itemId) + 1) >
               0
             ) {
               setQty(returnCartItemQuantinty(cart, itemId) + 1);
