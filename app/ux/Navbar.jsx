@@ -10,10 +10,37 @@ import CartIcon from "../components/CartIcon";
 import { usePathname } from "next/navigation";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
-import useIsMobile from "../hooks/IsMobileHook";
+// import useIsMobile from "../hooks/IsMobileHook";
+import { useStateValue } from "@/app/store/StateProvider";
+import { actionType } from "@/app/store/reducer";
 function Navbar() {
+  const [{ user, isMobile }, dispatch] = useStateValue();
+  // const [navbarMobile, setNavbarMobile] = useState(false);
+  const [toClose, setToClose] = useState(true);
+  useEffect(() => {
+    const handleWindowResize = () => {
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 650) {
+        console.log("is mobile");
+        dispatch({
+          type: actionType.SET_MOBILE,
+          isMobile: true,
+        });
+        // setNavbarMobile(true);
+      } else {
+        dispatch({
+          type: actionType.SET_MOBILE,
+          isMobile: false,
+        });
+        setToClose(false);
+      }
+    };
+    window.addEventListener("resize", handleWindowResize);
+
+    handleWindowResize();
+  }, []);
   const pathname = usePathname();
-  let { navbarMobile, toClose, setToClose } = useIsMobile();
+  // let { navbarMobile, toClose, setToClose } = useIsMobile();
   return (
     <>
       <div className=" w-full flex items-center justify-center paddings mt-0 z-nav-index relative shadow-lg shadow-indigo-300/60">
@@ -73,30 +100,19 @@ function Navbar() {
                   <span>Wellnes Products</span>{" "}
                 </Link>
               </li>
-              <li>
-                <CartIcon />
-              </li>
-              <li>
-                <Stack direction="row" spacing={2}>
-                  <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
-                </Stack>
-              </li>
             </ul>
+            <div className="flex items-center justify-center">
+              <CartIcon />
+              <Stack direction="row" spacing={2} className="mr-3 ml-3">
+                <Avatar sx={{ bgcolor: deepPurple[500] }}>
+                  {user == ""
+                    ? notImge
+                    : user?.userName?.charAt(0)?.toUpperCase()}
+                </Avatar>
+              </Stack>
+            </div>
             <div className="menues">
-              {navbarMobile ? (
-                // (
-                //   <i
-                //     className={`bi  bi-x
-                //      mobile-nav-toggle tgl`}
-                //     onClick={(e) => closee(e)}
-                //   ></i>
-                // ) : (
-                //   <i
-                //     className={`bi bi-list
-                //      mobile-nav-toggle tgl`}
-                //     onClick={(e) => manupilate(e)}
-                //   ></i>
-                // )
+              {isMobile ? (
                 toClose ? (
                   <MenuIcon
                     className="text-black"

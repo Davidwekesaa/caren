@@ -46,18 +46,21 @@ export const initialState = {
         ? localStorage.getItem("fee")
         : ""
       : null,
+  toggleMenue: false,
+  isMobile: false,
 };
 
 export const actionType = {
   SET_CART: "SET_CART",
   SET_TOTAL: "SET_TOTAL",
   SET_USER: "SET_USER",
-
   SET_COUNTY: "SET_COUNTY",
   SET_SUBCOUNTY: "SET_SUBCOUNTY",
   SET_LOCATION: "SET_LOCATION",
   SET_PHONE: "SET_PHONE",
   SET_DELIVERY: "SET_DELIVERY",
+  SET_TOGGLE: "SET_TOGGLE",
+  SET_MOBILE: "SET_MOBILE",
 };
 
 export const reducer = (state, action) => {
@@ -107,6 +110,16 @@ export const reducer = (state, action) => {
       return {
         ...state,
         deliveryfee: action.deliveryfee,
+      };
+    case actionType.SET_TOGGLE:
+      return {
+        ...state,
+        toggleMenue: action.toggleMenue,
+      };
+    case actionType.SET_MOBILE:
+      return {
+        ...state,
+        isMobile: action.isMobile,
       };
     default:
       return state;

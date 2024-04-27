@@ -1,5 +1,6 @@
 import { dbConnect } from "@/app/backend/dbConnect/dbConnect";
 import BlogsModel from "@/app/backend/Models/Blog";
+import { formatDate } from "@/app/backend/utils/fn";
 import { NextResponse } from "next/server";
 import url from "url";
 export async function GET(req, res) {
@@ -26,6 +27,29 @@ export async function GET(req, res) {
     return NextResponse.json({ getAllBlogs, numberOfPages }, { status: 200 });
   } catch (error) {
     console.error("Error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(req, { params }) {
+  try {
+    dbConnect();
+    const { blogImage, blogHeading, blogBody, blogOwner } = await req.json();
+    const blog = {
+      blogImage: blogImage,
+      blogHeading: blogHeading,
+      blogBody: blogBody,
+      blogOwner: blogOwner,
+      blogDAte: formatDate(),
+    };
+    const newBlog = new BlogsModel(blog);
+    const savedBlog = await newBlog.save();
+
+    return NextResponse.json({ savedBlog }, { status: 200 });
+  } catch (error) {
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
