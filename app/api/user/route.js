@@ -7,7 +7,7 @@ export async function GET(req, res) {
   try {
     await dbConnect();
     const getAllUsers = await User.find();
-    console.log("users ", getAllUsers);
+    // console.log("users ", getAllUsers);
     return NextResponse.json({ getAllUsers }, { status: 200 });
   } catch (error) {
     console.error("Error:", error);

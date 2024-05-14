@@ -12,7 +12,6 @@ function PageTo({ setPage, setrowsPerPage, page, rowsPerPage, totalPages }) {
   };
   return (
     <>
-      {" "}
       <div className="blog-pagination">
         <ul className="justify-content-center pgd">
           <div className="subMenuContainer">
