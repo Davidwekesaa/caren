@@ -2644,6 +2644,95 @@ form {
 }
 /* timeoder */
 
+/* login */
+.login {
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 40%;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0px 3px 20px rgba(34, 139, 34, 0.9);
+  padding: 20px;
+  margin-top: 10px;
+}
+.login-logo {
+  width: 100px;
+}
+.fileInputText {
+  display: none;
+}
+.logo-image {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  min-height: 90px;
+  border-radius: 100vw;
+  background: var(--primary-color);
+  /* padding: 1px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0px 3px 20px rgba(34, 139, 34, 0.9);
+}
+.l-image {
+  position: relative;
+}
+.camera-icon {
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+}
+.login form input {
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.submit-register {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.login-form-button {
+  margin-top: 1em;
+  width: 90px;
+  padding: 5px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  color: #f2f9fb;
+}
+.login-form-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.4);
+}
+.padf {
+  padding-left: 15px;
+}
+
+.login p {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* login */
+
 /* table screens */
 @media screen and (max-width: 650px) {
   .aboutss {
@@ -2709,6 +2798,9 @@ form {
     justify-content: space-between;
     width: 300px;
   } */
+  .login {
+    width: 90%;
+  }
 }
 @media screen and (min-width: 650px) {
   .rightContainer {

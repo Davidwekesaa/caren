@@ -13,7 +13,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 // import useIsMobile from "../hooks/IsMobileHook";
 import { useStateValue } from "@/app/store/StateProvider";
 import { actionType } from "@/app/store/reducer";
+import { useRouter } from "next/navigation";
 function Navbar() {
+  const router = useRouter();
   const [{ user, isMobile }, dispatch] = useStateValue();
   // const [navbarMobile, setNavbarMobile] = useState(false);
   const [toClose, setToClose] = useState(true);
@@ -41,6 +43,15 @@ function Navbar() {
   }, []);
   const pathname = usePathname();
   // let { navbarMobile, toClose, setToClose } = useIsMobile();
+
+  const isAutorized = () => {
+    let userss = JSON.parse(localStorage.getItem("user"));
+    if (userss?.other && parseInt(userss?.other?.userRights) > 0) {
+      router.push("/dashboard");
+    } else {
+      router.push("/auth/login");
+    }
+  };
   return (
     <>
       <div className=" w-full flex items-center justify-center paddings mt-0 z-nav-index relative shadow-lg shadow-indigo-300/60">
@@ -103,8 +114,12 @@ function Navbar() {
             </ul>
             <div className="flex items-center justify-center">
               <CartIcon />
+
               <Stack direction="row" spacing={2} className="mr-3 ml-3">
-                <Avatar sx={{ bgcolor: deepPurple[500] }}>
+                <Avatar
+                  sx={{ bgcolor: deepPurple[500] }}
+                  onClick={(e) => isAutorized(e)}
+                >
                   {user == ""
                     ? notImge
                     : user?.userName?.charAt(0)?.toUpperCase()}
